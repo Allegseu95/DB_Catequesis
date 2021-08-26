@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="34e93e37-17af-49c9-94f7-660c05b028dc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select c1.cur_nivel as nivel, sum( c1.cur_cant_alumno) as cantidad from curso as c1
+group by nivel]]>
+	</queryString>
+	<field name="nivel" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="17" width="284" height="58" uuid="6743c523-8024-4fcd-ae3b-6f0a4d98f585"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Centaur" size="36"/>
+				</textElement>
+				<text><![CDATA[CATEQUESIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="75" width="269" height="12" uuid="26ac7d56-1f08-4033-a4b5-e92e542f1a57"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Av. 9 de Julio y Olmedo  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="87" width="269" height="12" uuid="77ac6bba-55db-4125-8745-6270faf721c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Telf: 2-919-479, 0959782365]]></text>
+			</staticText>
+			<image>
+				<reportElement x="27" y="0" width="173" height="122" uuid="9ce2f3e8-6258-4c7e-9a49-c183d0ba62b8"/>
+				<imageExpression><![CDATA["D:\\Descargas\\Logo - Catequesis.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="112" y="0" width="392" height="35" uuid="7269f0b8-8cf5-4286-af35-e1ccd81a5014"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL DE ALUMNOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="347" y="35" width="157" height="35" uuid="6ad03485-4f73-4a76-a3a7-8383dbe07cc3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comunión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="35" width="196" height="35" uuid="7f3675bc-2450-421e-a5f7-5eee3261ad2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Confirmación]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="334" splitType="Stretch">
+			<bar3DChart>
+				<chart isShowLegend="true">
+					<reportElement mode="Transparent" x="0" y="0" width="572" height="334" uuid="0365ac2c-b50b-44fa-987d-d089cfbc26bc"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Total de Alumnos en todos los años"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nivel}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{cantidad}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="false">
+					<plot labelRotation="0.0">
+						<seriesColor seriesOrder="0" color="#009966"/>
+					</plot>
+					<itemLabel color="#FFCC33">
+						<font isBold="true" isPdfEmbedded="true"/>
+					</itemLabel>
+					<categoryAxisFormat labelRotation="0.0">
+						<axisFormat tickLabelMask="" verticalTickLabels="true"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</summary>
+</jasperReport>

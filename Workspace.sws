@@ -4,7 +4,8 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{87E813B5-70DE-499F-8C7A-24AFA2435C87}" Name="Catequesis" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="Catequesis.prj"/>
+		<Model ID="{87E813B5-70DE-499F-8C7A-24AFA2435C87}" Loaded="No" Name="Catequesis" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="Catequesis.prj"/>
+		<Model Expanded="Yes" ID="{20A8499C-A06B-41CA-BA4A-1FE05414DEAB}" Name="Wayra" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="/Archivos/ULEAM/Facultad de Ciencias Informaticas (FACCI)/Vinculacion/Fase I/Proyecto/Base de Datos/Wayra/Wayra.prj"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
